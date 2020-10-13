@@ -9,7 +9,7 @@
 
 Picturosaure is a nice Dino helping you to share your pictures.
 
-It is a simple Django app to share your picutres, with watermarks.
+It is a simple Django app to share your pictures, with watermarks.
 
 Summary :
 
