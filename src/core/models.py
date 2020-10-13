@@ -30,7 +30,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 class Icon(models.Model):
     """Icon model.
-    
+
     Each icon is displayed on the panel on the home page.
 
     Args:
@@ -131,7 +131,7 @@ class Photo(models.Model):
         txt = Image.new("RGBA", photo.size, (255, 255, 255, 0))
         drawing = ImageDraw.Draw(txt)
         font = ImageFont.truetype(
-            str(settings.STATIC_ROOT / "arial.ttf"),
+            str(settings.BASE_DIR / "core/static/arial.ttf"),
             settings.PICTUROSAURE_WATERMARK_SIZE,
         )
         text_w, text_h = drawing.textsize(settings.PICTUROSAURE_WATERMARK_TEXT, font)
@@ -151,7 +151,10 @@ class Photo(models.Model):
                 x = width - text_w - settings.PICTUROSAURE_WATERMARK_MARGIN
                 y = height - text_h - settings.PICTUROSAURE_WATERMARK_MARGIN
             drawing.text(
-                (x, y,),
+                (
+                    x,
+                    y,
+                ),
                 settings.PICTUROSAURE_WATERMARK_TEXT,
                 fill=settings.PICTUROSAURE_WATERMARK_COLOR,
                 font=font,
