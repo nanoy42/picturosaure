@@ -27,6 +27,8 @@ jobs:
         pip install -r requirements.txt
         pip install -r dev-requirements.txt
         cp src/picturosaure/local_settings.example.py src/picturosaure/local_settings.py
+    - name: Create media directory
+      run: mkdir src/media
     - name: Run Tests
       run: |
         python src/manage.py test
