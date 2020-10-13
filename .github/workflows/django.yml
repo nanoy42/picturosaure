@@ -28,8 +28,8 @@ jobs:
         pip install -r dev-requirements.txt
         cp src/picturosaure/local_settings.example.py src/picturosaure/local_settings.py
     - name: Collect statics
-        run: |
-          python src/manage.py collectstatic
+      run: |
+        python src/manage.py collectstatic
     - name: Run Tests
       run: |
         python src/manage.py test
