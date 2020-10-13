@@ -1,0 +1,9 @@
+[paths]
+source = src/
+[report]
+omit = 
+	*/migrations/*
+	src/picturosaure/wsgi.py 
+	src/picturosaure/asgi.py
+	*/apps.py
+	src/manage.py

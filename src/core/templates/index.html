@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+    TEMPLATE:
+	Lens by HTML5 UP
+	html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    
+    OTHER:
+    Picturosaure - Hungry dino sharing pictures
+    Copyright (C) 2020 Yoann Piétri
+
+    Picturosaure is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Picturosaure is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Picturosaure. If not, see <https://www.gnu.org/licenses/>.
+-->
+<html>
+
+<head>
+    <title>{{PICTUROSAURE_TITLE}}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css' %}" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.png' %}" />
+    <noscript>
+        <link rel="stylesheet" href="{% static 'css/noscript.css' %}" /></noscript>
+</head>
+
+<body class="is-preload-0 is-preload-1 is-preload-2">
+
+    <!-- Main -->
+    <div id="main">
+
+        <!-- Header -->
+        <header id="header">
+            <h1>{{PICTUROSAURE_TITLE}}</h1>
+            <p>{{PICTUROSAURE_LICENSE | safe }}</p>
+            <ul class="icons">
+                {% for icon in icons %}
+                <li><a href="{{icon.url}}" class="{{icon.icon}}" target="_blank"><span
+                            class="label">{{icon.name}}</span></a></li>
+                {% endfor %}
+                {% if PICTUROSAURE_CONTACT %}
+                <li><a href="mailto:{{PICTUROSAURE_CONTACT}}" class="icon fa-envelope"><span
+                            class="label">Email</span></a></li>
+                {% endif %}
+            </ul>
+        </header>
+
+        <!-- Thumbnail -->
+        <section id="thumbnails">
+            {% for photo in photos %}
+            {% if photo.photo_watermark %}
+            <article>
+                <a class="thumbnail" href="{{photo.photo_watermark.url}}" data-position="left center"><img
+                        src="{{photo.photo_watermark.url}}" alt="" /></a>
+                <h2>{{photo.name}}</h2>
+                <p>{% if photo.description %}<i class="fa fa-image"></i> {{photo.description}}
+                    {% endif %}{% if photo.location %}<i class="fas fa-map-pin"></i> {{photo.location}}
+                    {% endif %}{% if photo.date %}<i class="fas fa-calendar-alt"></i> {{photo.date}} {% endif %}
+                    <a href="{{photo.photo_watermark.url}}" download class="fas fa-download"></a> Distributed under <a
+                        href="{{photo.license.url}}">{{photo.license.name}}</a></p>
+            </article>
+            {% endif %}
+            {% endfor %}
+        </section>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <ul class="copyright">
+                {% if PICTUROSAURE_LICENSE_NAME %}
+                <li>&copy; {{PICTUROSAURE_LICENSE_NAME}}</li>
+                {% endif %}
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
+            </ul>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/browser.min.js' %}"></script>
+    <script src="{% static 'js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
