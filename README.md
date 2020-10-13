@@ -1,7 +1,7 @@
 # Picturosaure
 
 [![Documentation Status](https://readthedocs.org/projects/picturosaure/badge/?version=latest)](https://picturosaure.readthedocs.io/en/latest/?badge=latest)
-[![Coverage Status](https://coveralls.io/repos/github/nanoy42/picturosaure/badge.svg?branch=master)](https://coveralls.io/github/nanoy42/picturosaure?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/nanoy42/picturosaure/badge.svg?branch=main)](https://coveralls.io/github/nanoy42/picturosaure?branch=main)
 [![github-actions](https://github.com/nanoy42/picturosaure/workflows/Django%20CI/badge.svg)](https://github.com/nanoy42/picturosaure/workflows/Django%20CI)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Code style black](https://img.shields.io/badge/code%20style-black-000000.svg)]("https://github.com/psf/black)
@@ -43,7 +43,7 @@ The full documentation ca be found at https://picturosaure.readthedocs.io/en/lat
 
 ## Screenshots
 
-![home](https://github.com/nanoy42/picturosaure/raw/master/res/screenshots/home.png "Home page")
+![home](https://github.com/nanoy42/picturosaure/raw/main/res/screenshots/home.png "Home page")
 
 ## License
 
