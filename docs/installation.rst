@@ -47,6 +47,9 @@ You can then create a superuser by running the command
 
     python3 manage.py createsuperuser
 
+.. warning::
+    You may have to manually create directories ``src/media/original`` and ``src/media/watermark`` and give the right permissions.
+
 Development installation
 ########################
 
